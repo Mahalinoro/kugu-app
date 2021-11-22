@@ -1,0 +1,72 @@
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(25, 25, 25, 0.15);
+    backdrop-filter: blur(2px);
+}
+
+.login-container{
+    background-color: white;
+    width: 35%;
+    margin: 8% auto;
+    padding: 16px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.email-box{
+    position: relative;
+}
+
+.email-box i{
+    position:absolute;
+    left:70px;
+    top:0;
+    padding: 8px 8px;
+}
+
+.email-box svg{
+   fill: #B6B6B6;
+}
+
+
+.email-input{
+    box-sizing: border-box;
+    width: 400px;
+    padding-left: 40px;
+    color: #828282;
+    border: 1px solid #F2F2F2;
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 40px;   
+}
+
+.login-btn{
+    width: 400px;
+    background-color: #FAA300;
+    height: 40px; 
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.divider {
+    border-top: 0.5px solid #efefef;
+    width: 400px;
+    display: inline-block;
+}
+
+.signup-btn{
+    border:none;
+    background-color: transparent;
+    color: #FAA300;
+    cursor: pointer;
+}
+
+.forgot:hover{
+    color: #FAA300;
+}
