@@ -1,0 +1,97 @@
+.home-hero{
+    background-image: url('../img/bg.jpg');
+    height: 376px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    justify-items: center;
+}
+
+.hero-card{
+    width: 240px;
+    height: 148px;
+    margin: auto 144px;
+    background-color: white;
+    border-radius: 4px;
+    padding: 20px 50px;
+    text-align: center;
+}
+
+.hero-btn{
+    background: #FAA300;
+    border: 1px solid #FAA300;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: 10px 16px;
+    color: white;
+}
+
+.hero-card .divider-card{
+    border: 1px solid transparent;
+    margin: 16px;
+}
+
+.item-display{
+    margin: 64px 144px;
+}
+
+.item-categories{
+    display: flex;
+    justify-content: center;
+}
+
+.category{
+    text-align: center;
+    margin: 0 50px;
+}
+
+.category-btn{
+    /* background: #FAA300; */
+    border: 2px solid #FAA300;
+    border-radius: 50%;
+    background-color: white;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+}
+
+.btn-active{
+    /* background: #FAA300; */
+    background-color: #FAA300;
+}
+
+.category-btn svg{
+    fill: #FAA300;
+    width: 40px;
+    height: 40px;
+}
+
+.category-btn .svg-active{
+    fill: white;
+}
+
+
+.category span{
+    display: block;
+    margin-top: 16px;
+}
+
+.item-carousel{
+    margin-bottom: 50px;
+}
+
+.item-carousel .item-wrapper{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.item-carousel .title{
+    text-align: center;
+}
+
+.home .divider{
+    border: 0.5px solid #efefef;
+    margin: 40px 0;
+}

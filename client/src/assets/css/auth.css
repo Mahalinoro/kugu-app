@@ -22,9 +22,9 @@
 }
 
 .email-box i{
-    position:absolute;
-    left:70px;
-    top:0;
+    position:relative;
+    left:-398px;
+    top: 6px;
     padding: 8px 8px;
 }
 
@@ -58,6 +58,7 @@
     border-top: 0.5px solid #efefef;
     width: 400px;
     display: inline-block;
+    margin: 0px;
 }
 
 .signup-btn{

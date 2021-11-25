@@ -62,7 +62,6 @@ class Authentication extends React.Component {
             </form>
             <div style={{margin: "16px"}}></div>
             <NavLink to="/" className="text-regular-16 text-color forgot">forgot your password?</NavLink>
-            <p className="text-medium-16 text-color">OR</p>
         
             {/* <button>Continue with Google</button>
             <button>Continue with Facebook</button> */}
@@ -120,7 +119,7 @@ class Authentication extends React.Component {
             </form>
             <div style={{margin: "16px"}}></div>
             <NavLink to="/" className="text-regular-16 text-color forgot">forgot your password?</NavLink>
-            <p className="text-medium-16 text-color">OR</p>
+
         
             {/* <button>Continue with Google</button>
             <button>Continue with Facebook</button> */}
