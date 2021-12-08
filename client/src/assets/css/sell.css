@@ -1,0 +1,119 @@
+.sell-hero{
+    background-image: url('../img/clothes.jpeg');
+    height: 150px;
+    background-position: center;
+    background-size: cover;
+}
+
+.card-form{
+    border: 0.5px solid #efefef;
+    border-radius: 4px;
+    width: 50%;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 24px 40px;
+    position: relative;
+    top: -50px;
+    background-color: white;
+    text-align: start;
+}
+
+.sell{
+    text-align: center;
+}
+
+.sell .divider{
+    border: 0.5px solid #efefef;
+    margin: 24px 0;
+}
+
+.input-sell{
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    margin-top: 40px;
+}
+
+.input-sell input, .input-sell select, .input-sell textarea{
+    width: 75%;
+    color: #828282;
+    border: 1px solid #F2F2F2;
+    border-radius: 4px;
+    padding: 8px 10px;
+}
+
+.input-sell select{
+    background-color: white;
+}
+
+.input-sell textarea{
+    height: 150px;
+}
+
+.input-btn{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+
+.btn-sell{
+    background: #FAA300;
+    border: 1px solid #FAA300;
+    border-radius: 4px;
+    padding: 10px;
+    width: 20%;
+    cursor: pointer;
+}
+
+.btn-upload{
+    color: white;
+    margin-left: 10px;
+}
+
+.btn-cancel{
+    color: #FAA300;
+    background: transparent;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+
+}
+
+.btn-file {
+  border: 1px solid #FAA300;
+  color: white;
+  background-color: #FAA300;
+  padding: 8px 20px;
+  border-radius: 4px;
+
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.dropzone{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #BDBDBD;
+    height: 300px;
+}
+
+.dropzone span{
+    margin-bottom: 16px;
+}
+
+.dropzone svg{
+    margin-bottom: 16px;
+}
+

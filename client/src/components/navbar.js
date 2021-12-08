@@ -4,18 +4,48 @@ import React from "react";
 // import "bootstrap/dist/css/bootstrap.css";
 import '../assets/css/nav.css';
 
-// We import material icons for the page
-// import { ShoppingCartOutlinedIcon } from '@mui/icons-material/ShoppingCartOutlined';
-// import { FavoriteBorderOutlinedIcon } from '@mui/icons-material/FavoriteBorderOutlined';
-// import { SearchOutlinedIcon } from '@mui/icons-material/SearchOutlined';
-
 // We import NavLink to utilize the react router.
 import { NavLink } from "react-router-dom";
- 
-// Here, we display our Navbar
-const Navbar = () => {
-  return (
-    <nav>
+
+class Navbar extends React.Component{
+    constructor(props) {
+      super(props);
+      this.state = {isLogin: true};
+    }
+
+    render(){
+        let content;
+        if(this.state.isLogin){
+            content = (
+                <div className="nav-icon nav-log text-regular-16">
+                    <div className="nav-avatar" style={{backgroundImage: "url(/images/profile.jpg)"}}></div>
+                    <div class="dropdown">
+                        <button class="dropbtn text-regular-16">Mahaly
+                            <i>
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.59 0.294922L6 4.87492L1.41 0.294922L0 1.70492L6 7.70492L12 1.70492L10.59 0.294922Z" fill="black" fill-opacity="0.25"/>
+                                </svg>
+                            </i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="#" className="text-regular-16 text-color">My Profile</a>
+                            <a href="#" className="text-regular-16 text-color">Settings</a>
+                            <a href="#" className="text-regular-16 text-color">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            );
+        }else{
+            content = (
+            <div className="nav-icon text-regular-16">
+                <NavLink to="/" className="nav-button primary-color">Sign Up | Login</NavLink>
+            </div> 
+            );
+        }
+
+
+        return (
+            <nav>
         <div className="nav-container">
             <div className="nav-link-items">
                 <div className="logo-item">
@@ -60,14 +90,15 @@ const Navbar = () => {
                         </svg>
                     </NavLink>
                 </div>
-                    <div className="nav-icon text-regular-16">
-                    <NavLink to="/" className="nav-button primary-color">Sign Up | Login</NavLink>
-                </div>                
+                {content}             
             </div>
         </div>
     </nav>
-  
-  );
-};
+
+        )
+    }
+
+}
  
+  
 export default Navbar;

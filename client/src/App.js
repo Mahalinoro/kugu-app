@@ -8,6 +8,8 @@ import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import ItemDetails from "./pages/item-details";
 import Home from "./pages/landing-page";
+import Sell from "./pages/sell";
+import Cart from "./pages/cart";
 
 
 const App = () => {
@@ -17,6 +19,8 @@ const App = () => {
           <Routes>
               <Route exact path="/" element={<Home />}></Route>
               <Route exact path="/item-details" element={<ItemDetails />}></Route>
+              <Route exact path="/sell" element={<Sell />}></Route>
+              <Route exact path="/cart" element={<Cart />}></Route>
             </Routes>
         <Footer />
      
