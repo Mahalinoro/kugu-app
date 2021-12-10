@@ -9,6 +9,11 @@
     box-shadow: 0px 0.5px 0px rgba(0, 0, 0, 0.25);
 }
 
+.nav-search{
+  flex: 1;
+  margin: 0 32px;
+}
+
 .nav-link-items{
     display: flex;
     justify-content: space-between;
@@ -60,7 +65,7 @@
 
 .search-input{
     box-sizing: border-box;
-    width: 548px;
+    width: 100%;
     padding-left: 40px;
     padding-right: 20px;
     color: #828282;
@@ -85,6 +90,72 @@
     fill: #B6B6B6;
 }
 
-input:focus {
+input, textarea, select:focus {
   outline: none;
+}
+
+.nav-avatar{
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.nav-log{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* The dropdown container */
+.dropdown {
+
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  border: none;
+  outline: none;
+  background-color: inherit;
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    border-radius: 4px;
+    display: none;
+    position: absolute;
+    background-color: #f4f4f4;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown svg{
+    margin-left: 8px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #FAA300;
+  border-radius: 4px;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
