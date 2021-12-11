@@ -22,7 +22,7 @@ const ProfilePage = () => {
     }
 
     const OpenEditPage = () => {
-        // go to edit profil page
+        // go to edit profile page
     }
 
     return (
@@ -48,7 +48,7 @@ const ProfilePage = () => {
                     <div className="col-md-3">
                         <button className="text-medium-16 btn-cart" onClick={OpenEditPage}>
                         <i className="fas fa-pen"></i>
-                        edit profil</button>
+                        edit profile</button>
                     </div>
                 </div>
                 {/* navigation */}
