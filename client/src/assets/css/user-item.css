@@ -1,0 +1,25 @@
+.user-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.user-item .img {
+    width: 120px;
+    height: 100px;
+}
+
+.user-item .img img {
+    width: 100%;
+    height: 100%;
+    transform: rotate(21deg);
+} 
+
+.user-item > *:not(:last-child) {
+    margin: 100px 0 50px;
+}
+
+.user-item .text {
+    text-align: center;
+}

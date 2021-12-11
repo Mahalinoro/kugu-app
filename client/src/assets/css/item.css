@@ -1,0 +1,168 @@
+.item-container{
+    margin: 64px 144px;
+}
+
+.item-details{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
+
+.item-photo{
+    width: 50%;
+    height: 588px;
+    /* background-image: url('cup.jpg'); */
+    background-size: cover;
+    background-position: center;
+    border-radius: 4px;
+}
+
+.item-description{
+    width: 40%;
+    padding: 32px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.item-description .divider{
+    border: 0.5px solid #efefef;
+}
+
+.it-pic{
+    width: 648px;
+    height: 588px;
+}
+
+.vendor-profile{
+    display: flex;
+    align-items: center;
+}
+
+.vendor-picture{
+    width: 80px;
+    height: 80px;
+    /* background-image: url('profile.jpg'); */
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.rem{
+    margin: 4px 0;
+}
+
+.divider{
+    margin: 24px 0;
+    border: 0.5px solid rgba(0, 0, 0, 0.25);
+}
+
+.btn-item{
+    width: 100%;
+    background: #FAA300;
+    border: 1px solid #FAA300;
+    display: block;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+.btn-modal{
+    background: #FAA300;
+    border: 1px solid #FAA300;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 8px 8px;
+    cursor: pointer;
+}
+
+
+.btn-modal-white{
+    color: white;
+}
+
+.btn-modal-trans{
+    color: #FAA300;
+    background: transparent;
+}
+
+.btn-cart{
+    color: white;
+}
+
+.btn-fav{
+    color: #FAA300;
+    background: transparent;
+}
+
+.similar-container{
+    width: 90%;
+}
+
+.item-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.item-card{
+    margin-right: 32px;
+    margin-bottom: 20px;
+}
+
+.item-pic{
+    background-size: cover;
+    background-position: center;
+    width: 312px;
+    height: 312px;
+    border-radius: 4px 4px 0 0;
+}
+
+.first-row, .second-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.first-row p, .second-row p{
+    margin: 0;
+}
+
+.mr-flag{
+    margin-right: 8px;
+}
+
+.similar-btn{
+    background: #FAA300;
+    border: 1px solid #FAA300;
+    display: block;
+    border-radius: 4px;
+    padding: 10px 16px;
+    margin: 8px 0;
+    cursor: pointer;
+    color: white;
+    display: inline;
+}
+
+.cart-modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(25, 25, 25, 0.15);
+    backdrop-filter: blur(2px);
+}
+
+.modal-container{
+    background-color: white;
+    width: 25%;
+    margin: 15% auto;
+    padding: 64px 16px;
+    text-align: center;
+    box-shadow: 0px 6px 8px rgba(24, 39, 75, 0.12);
+    border-radius: 4px;
+}

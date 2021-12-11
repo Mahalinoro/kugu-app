@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+/* font-family: 'Raleway', sans-serif; */
+/* font-family: 'Berkshire Swash', cursive; */
+body, html{
+    margin: 0%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.primary-color{
+    color: #FAA300;
+}
+
+.text-color{
+    color: #191919;
+}
+
+.logo{
+    color: #FAA300;
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.heading-48{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 48px;
+}
+
+.heading-40{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+
+}
+
+.heading-28{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+}
+
+.text-light-16{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.text-light-24{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.text-light-20{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.text-light-28{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 28px;
+}
+
+.text-regular-16{
+    font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.text-regular-18{
+    font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.text-regular-20{
+    font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.text-regular-24{
+    font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+    font-size: 24px;
+}
+
+.text-medium-16{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.text-medium-20{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.text-medium-24{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.text-medium-32{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.text-medium-36{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+}
+
+.text-semibold-20{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.text-bold-16{
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+.text-bold-24{
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+
+.w100 {
+    width: 100vw;
+    overflow: hidden;
+}
