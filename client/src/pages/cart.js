@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import '../assets/css/cart.css'; 
 
 
@@ -14,7 +14,7 @@ export default class Cart extends React.Component{
         if(this.state.isEmpty){
             content = (
                 <div className="cart-empty">
-                    <img src="/images/open-box.png"></img>
+                    <img alt="open-box" src="/images/open-box.png"></img>
                     <p className="text-semibold-20">Oops! Your Cart is Empty</p>
                     <p className="text-light-20">Looks like you haven’t added anything in your cart yet</p>
                     <button className="text-medium-16 btn-cart">Your cart is empty!</button>
