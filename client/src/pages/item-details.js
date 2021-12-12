@@ -63,11 +63,7 @@ export default class ItemDetails extends React.Component {
                         <p className="text-light-16">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         <p className="text-medium-20">Vendor</p>
                         <div className="vendor-profile">
-<<<<<<< HEAD
                             <div className="vendor-picture" style={{ backgroundImage: "url(/images/profile.jpg)" }}>
-=======
-                            <div className="vendor-picture" style={{backgroundImage: "url(/images/profile.jpg)"}}>
->>>>>>> 119e4bd8cb935c2358a86e8b69fce364f4fb37c4
                                 {/* <img alt="profile" src={profile}></img> */}
                             </div>
 
