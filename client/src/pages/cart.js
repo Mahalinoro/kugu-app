@@ -1,17 +1,22 @@
 import React from 'react';
 // import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../assets/css/cart.css'; 
 
 
-export default class Cart extends React.Component{
-    constructor(props) {
-      super(props);
-      this.state = {isEmpty: true};
-    }
+const Cart = () => {
+    const navigation = useNavigate();
+    const [state, setstate] = React.useState({
+        isEmpty: true
+    })
 
-    render() {
-        let content;
-        if(this.state.isEmpty){
+    React.useEffect(() => {
+        setstate({...state, isEmpty: false});
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
+    let content;
+    if(state.isEmpty){
             content = (
                 <div className="cart-empty">
                     <img alt="open-box" src="/images/open-box.png"></img>
@@ -22,6 +27,7 @@ export default class Cart extends React.Component{
             );
         }else{
             content = (
+                <div className='cart-bg'>
                 <div className="text-color cart">
                 <div className="my-cart">
                     <p className="text-medium-24">My Cart</p>
@@ -93,9 +99,10 @@ export default class Cart extends React.Component{
                         <p className="text-bold-16">0.0 RWF</p>
                     </div>
 
-                    <button className="btn-checkout text-medium-16">Check out</button>
+                    <button className="btn-checkout text-medium-16" onClick={() => navigation("/cart/checkout")}>Check out</button>
                 </div>
                 
+            </div>
             </div>
 
             )
@@ -104,5 +111,6 @@ export default class Cart extends React.Component{
         return (
             content
         )
-    }
 }
+
+export default Cart;

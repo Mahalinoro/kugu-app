@@ -1,3 +1,6 @@
+.cart-bg {
+    /* background-color: #F2F2F2; */
+}
 .cart{
     margin: 64px 144px;
     display: flex;
@@ -75,6 +78,7 @@
 
 .btn-cart{
     /* padding: 20px 0; */
+    margin-top: 20px;
     background: #FAA300;
     border: 1px solid #FAA300;
     display: block;

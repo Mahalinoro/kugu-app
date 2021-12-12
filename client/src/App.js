@@ -1,14 +1,21 @@
-import React, { useState, useEffect } from "react";
+import  axios from 'axios';
+import React, { useEffect, useState, lazy, Suspense } from "react";
+
 // We use Route in order to define the different routes of our application
 import { Route, Routes } from "react-router-dom";
-import axios from 'axios'
+
 // We import all the components we need in our app
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
-import ItemDetails from "./pages/item-details";
-import Home from "./pages/landing-page";
-import Sell from "./pages/sell";
-import Cart from "./pages/cart";
+import Spinner from "./components/spinner";
+
+// chunck application
+const ItemDetails = lazy(() => import('./pages/item-details'));
+const Home = lazy(() => import('./pages/landing-page'));
+const Sell = lazy(() => import('./pages/sell'));
+const Cart = lazy(() => import('./pages/cart'));
+const ProfilePage = lazy(() => import('./pages/profile-page'));
+const Checkout = lazy(() => import('./pages/checkout'));
 
 
 const App = () => {
@@ -20,20 +27,23 @@ const App = () => {
       setItems(data);
     }
     getItems();
-  }, [items])
+  });
 
   return (
     <div>
-      <h1>{items.stat}</h1>
-      <Navbar />
-      <Routes>
-        <Route exact path="/" element={<Home items={items} />}></Route>
-        <Route exact path="/item-details" element={<ItemDetails />}></Route>
-        <Route exact path="/sell" element={<Sell />}></Route>
-        <Route exact path="/cart" element={<Cart />}></Route>
-      </Routes>
-      <Footer />
-
+        <Navbar />
+          { /* display spinner when page is loading */ }
+          <Suspense fallback={<Spinner />}>
+            <Routes>
+                <Route exact path="/" element={<Home items={items}/>}></Route>
+                <Route exact path="/item-details" element={<ItemDetails />}></Route>
+                <Route exact path="/sell" element={<Sell />}></Route>
+                <Route exact path="/cart" element={<Cart />}></Route>
+                <Route exact path="/cart/checkout" element={<Checkout />} />
+                <Route exact path="/user/profil" element={<ProfilePage />} />
+              </Routes>
+            </Suspense>
+        <Footer />
     </div>
   );
 };
