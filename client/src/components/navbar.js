@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 class Navbar extends React.Component{
     constructor(props) {
       super(props);
-      this.state = {isLogin: true};
+      this.state = {isLogin:false};
     }
 
     render(){
@@ -28,7 +28,7 @@ class Navbar extends React.Component{
                             </i>
                         </button>
                         <div class="dropdown-content">
-                            <NavLink to="/" className="text-regular-16 text-color">My Profile</NavLink>
+                            <NavLink to="/user/profil" className="text-regular-16 text-color">My Profile</NavLink>
                             <NavLink to="/" className="text-regular-16 text-color">Settings</NavLink>
                             <NavLink to="/" className="text-regular-16 text-color">Logout</NavLink>
                         </div>
@@ -90,7 +90,7 @@ class Navbar extends React.Component{
                         </svg>
                     </NavLink>
                 </div>
-                <NavLink to="/user/profile">{content}</NavLink>           
+                {content}             
             </div>
         </div>
     </nav>

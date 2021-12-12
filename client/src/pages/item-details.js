@@ -81,7 +81,7 @@ export default class ItemDetails extends React.Component {
 
                 {modal}
 
-                <div className="similar-items">
+                {/* <div className="similar-items">
                     <p className="heading-28">Similar Items</p>
 
                     <div className="similar-container">
@@ -252,12 +252,10 @@ export default class ItemDetails extends React.Component {
                             </div>
                         </div>
 
-                        <div style={{ textAlign: 'center' }}>
-                            <button className="similar-btn text-medium-16">Load More</button>
-                        </div>
+                        
 
                     </div>
-                </div>
+                </div> */}
             </div>
         )
     }
