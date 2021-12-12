@@ -90,11 +90,7 @@ class Navbar extends React.Component{
                         </svg>
                     </NavLink>
                 </div>
-<<<<<<< HEAD
-                {content}             
-=======
-                <NavLink to="/user/profil">{content}</NavLink>           
->>>>>>> 119e4bd8cb935c2358a86e8b69fce364f4fb37c4
+                <NavLink to="/user/profile">{content}</NavLink>           
             </div>
         </div>
     </nav>
