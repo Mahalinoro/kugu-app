@@ -12,7 +12,6 @@ const Order = require('./models/order');
 const Cart = require('./models/cart');
 const User = require('./models/user');
 const Product = require('./models/product');
-const { SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS } = require('constants');
 const cart = require('./models/cart');
 
 require('dotenv').config();
@@ -102,8 +101,7 @@ app.post('/orders', (req, res) => {
 
 
 app.get('/orders/:userID', (req, res) => {
-    Order.find({})
-        .where('sellerID').equals(req.params.userID)
+    Order.find({userID: new mongoose.Types.ObjectId(req.params.userID)})
         .then(item => {
             if (!item) {
                 res.status(404).send();
@@ -115,8 +113,7 @@ app.get('/orders/:userID', (req, res) => {
 });
 
 app.get('/cart/:userID', (req, res) => {
-    Order.find({})
-        .where('sellerID').equals(req.params.userID)
+    Order.find({'sellerID': req.params.userID})
         .then(cart => {
             if (!cart) {
                 res.status(404).send();
@@ -128,7 +125,9 @@ app.get('/cart/:userID', (req, res) => {
 });
 
 
+app.get('/search/:param', (req, res) => {
 
+})
 
 
 // serve app
