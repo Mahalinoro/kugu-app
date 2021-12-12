@@ -3,15 +3,19 @@ const express = require('express');
 const app = express();
 const apiPort = 8080;
 const path = require('path');
+const fs = require('fs');
+const bodyParser = require('body-parser');
 const cors = require("cors");
 const connectDB = require('./config//db');
 const mongoose = require('mongoose');
+const multer = require('multer');
 
 // get models
 const Order = require('./models/order');
 const Cart = require('./models/cart');
 const User = require('./models/user');
 const Product = require('./models/product');
+const Image = require('./models/image');
 
 require('dotenv').config();
 
@@ -19,7 +23,8 @@ require('dotenv').config();
 connectDB();
 
 // add middleware
-app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 const corsOptions = {
     origin: '*',
     credentials: true,            //access-control-allow-credentials:true
@@ -79,6 +84,8 @@ app.post('/item', (req, res) => {
             img: req.body.img,
             description: req.body.description,
             sellerID: req.body.sellerID,
+            condition: req.body.condition,
+            
         }
     );
     newItem.save().then(item => res.json(item)).catch((e) => {
@@ -128,6 +135,19 @@ app.get('/search/:param', (req, res) => {
 
 })
 
+
+app.post('/image', (req,res) => {
+    const storage = multer.diskStorage({
+        destination: (req, file, cb) => {
+            cb(null, 'uploads')
+        },
+        filename: (req, file, cb) => {
+            cb(null, file.fieldname + '-' + Date.now())
+        }
+    });
+      
+    const upload = multer({ storage: storage });
+})
 
 // serve app
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`));

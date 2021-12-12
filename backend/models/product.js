@@ -16,18 +16,22 @@ const productSchema = new mongoose.Schema({
         type: Number,
         required: true,
         validate(val) {
-            if (val <= 0) throw new Error('Price cannot be negative');
+            if (val < 0) throw new Error('Price cannot be negative');
         }
     },
-    img: {
-        type: String,
-        required: true,
+    img : {
+        image: Buffer,
+        title: String
     },
     description: {
         type: String,
         required: true,
     },
     sellerID: {
+        type: String,
+        required: true,
+    },
+    condition: {
         type: String,
         required: true,
     },
