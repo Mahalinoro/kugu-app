@@ -28,24 +28,7 @@ const CheckoutPage = () => {
                                     <button className="cart-item-btn text-medium-36">+</button>
                                 </div>
                             </div>
-                            <div className='row'>
-                                <div className='col-md-10'>
-                                    <p className='text-regular-18'>Address</p>
-                                    <p className='text-regular-18'>Add your address</p>
-                                </div>
-                                <div className='col-md-2'>
-                                    <button className="cart-item-btn text-medium-36">+</button>
-                                </div>
-                            </div>
-                            <div className='row'>
-                                <div className='col-md-10'>
-                                    <p className='text-regular-18'>Address</p>
-                                    <p className='text-regular-18'>Add your address</p>
-                                </div>
-                                <div className='col-md-2'>
-                                    <button className="cart-item-btn text-medium-36">+</button>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                     <div className='col-md-6'>

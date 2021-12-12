@@ -62,12 +62,15 @@ export default class Home extends React.Component{
                     <div className="item-carousel">
                         <div className="item-wrapper">
                             {this.props.items.map(item => (
-                                <div className="item-card">
-                                <div className="item-pic" style={{ backgroundImage: `url(`+ item.img + `)`}}></div>
+                            <div className="item-card">
+                                <NavLink to={'/item-details/?id='+item._id}>
+                                    <div className="item-pic" style={{ backgroundImage: `url(`+ item.img + `)`}}></div>
+                                </NavLink>
+                                
 
                                 <div className="first-row">
                                     <div>
-                                        <p className="text-bold-16">{item.price}</p>
+                                        <p className="text-bold-16">{item.price} RWF</p>
                                     </div>
                                     <div>
                                         <i className="mr-flag">
