@@ -12,7 +12,6 @@ const Order = require('./models/order');
 const Cart = require('./models/cart');
 const User = require('./models/user');
 const Product = require('./models/product');
-const cart = require('./models/cart');
 
 require('dotenv').config();
 
