@@ -111,9 +111,9 @@ input, textarea, select:focus {
 
 /* The dropdown container */
 .dropdown {
+
   float: left;
   overflow: hidden;
-  cursor: pointer;
 }
 
 /* Dropdown button */

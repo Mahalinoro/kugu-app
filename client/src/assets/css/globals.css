@@ -6,9 +6,10 @@ body, html{
     margin: 0%;
 }
 
-a {
+a:link {
     text-decoration: none;
 }
+
 
 .primary-color{
     color: #FAA300;
