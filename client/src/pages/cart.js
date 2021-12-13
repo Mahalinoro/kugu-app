@@ -1,7 +1,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import React from 'react';
 // import { NavLink } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import '../assets/css/cart.css'; 
 
 
@@ -112,8 +112,9 @@ const Cart = () => {
         }
         else{
             content = (
-                <div>
-                    <p>You need to login to view cart</p>
+                <div className="cart-empty">
+                    <p className="text-medium-20">Oops! You need to log in first to view the cart :(</p>
+                    <NavLink className="text-medium-16 btn-cart" to="/">Return to Home</NavLink>
                 </div>
             )
         }
