@@ -103,9 +103,9 @@ app.post('/order', (req, res) => {
     const newOrder = new Order(
         {
             _id: new mongoose.Types.ObjectId(),
-            userID: req.body.name,
-            items: req.body.category,
-            bill: req.body.price,
+            userID: req.body.userID,
+            items: req.body.items,
+            bill: req.body.bill,
         }
     );
     newOrder.save().then(item => res.json(item)).catch((e) => {
@@ -139,33 +139,20 @@ app.get('/cart/:userID', (req, res) => {
 });
 
 
-app.post('/cart/:userID', (req, res) => {
-    Cart.find({ 'userID': req.params.userID })
-        .then(cart => {
-            if (!cart) {
-                const newCart = new Cart({
-                    userId: req.body.userID,
-                    items: [req.body.item],
-                    bill: req.body.bill
-                })
-                newCart.save().then(item => res.json(item)).catch((e) => {
-                    res.status(400).send(e);
-                });
+app.post('/cart', (req, res) => {
+    const newCart = new Cart(
+        {
+            _id: new mongoose.Types.ObjectId(),
+            item: req.body.item,
+            bill: req.body.bill,
+            userId: req.body.userID,
 
+        }
+    );
+    newCart.save().then(item => res.json(item)).catch((e) => {
+        res.status(400).send(e);
+    });
 
-            }
-            const updateCart = new Cart({
-                userId: req.body.userID,
-                items: cart.items.push(req.body.item),
-                bill: (cart.bill + req.body.bill)
-            })
-            updateCart.save().then(item => res.json(item)).catch((e) => {
-                res.status(400).send(e);
-            });
-            res.send(cart);
-        }).catch((e) => {
-            res.status(400).send(e);
-        });
 });
 
 app.get('/search/:param', (req, res) => {
@@ -193,5 +180,5 @@ app.post('/image', (req, res) => {
 // serve app
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}.`);
+    console.log(`Server is running on port ${PORT}.`);
 });

@@ -6,20 +6,10 @@ const CartSchema = new Schema({
         required: true,
         type: String,
     },
-    items:
-        [{
-            productId: {
-                type: String,
-            },
-            name: String,
-            quantity: {
-                type: Number,
-                required: true,
-                min: [1, 'Quantity can not be less then 1.'],
-                default: 1
-            },
-            price: Number
-        }],
+    item:
+       {
+           type: Object,
+       },
     bill: {
         type: Number,
         required: true,
