@@ -18,6 +18,7 @@ export default class Sell extends React.Component {
             img: '',
             description: '',
             condition: '',
+            sellerID: '61b34d70defd5a118c4f3486'
             
     } }
 
@@ -36,6 +37,7 @@ export default class Sell extends React.Component {
  
     }
 
+    
     saveProduct = async (e) => {
         e.preventDefault();
         await axios.post('https://kugu-backend.herokuapp.com/item', {
@@ -45,7 +47,7 @@ export default class Sell extends React.Component {
             img: this.state.img,
             description: this.state.description,
             condition: this.state.condition,
-            sellerID: this.props.name,
+            sellerID: this.state.sellerID,
         }).then(() => this.setState({msg: 'Uploaded successfully'}))
         
 
@@ -69,7 +71,7 @@ export default class Sell extends React.Component {
             )
         }
 
-        if(this.props.isAuthenticated)
+        if(this.props.isAuthenticated === false)
         return (
             <div className="text-color sell">
                 <div className="sell-hero">
