@@ -35,6 +35,7 @@ const App = () => {
     getItems();
   }, []);
 
+
   return (
     <div>
         <Navbar />

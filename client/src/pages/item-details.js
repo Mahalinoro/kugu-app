@@ -55,7 +55,7 @@ export default class ItemDetails extends React.Component {
         return (
             <div className="item-container">
                 <div className="item-details">
-                    <div className="item-photo" style={{ backgroundImage: `url(`+ this.state.item.img + `)` }}>
+                    <div className="item-photo" style={{ backgroundImage: `url("data:image/png;base64,`+ this.state.item + `")` }}>
                         {/* <img className="it-pic" alt="cup" src={cup}></img> */}
                     </div>
 
@@ -66,7 +66,7 @@ export default class ItemDetails extends React.Component {
                         <p className="text-medium-20">Description</p>
                         <p className="text-light-16">{this.state.item.description}</p>
                         <p className="text-medium-20">Condition</p>
-                        <p className="text-light-16">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p className="text-light-16">{this.state.item.condition}.</p>
                         <p className="text-medium-20">Vendor</p>
                         <div className="vendor-profile">
                             <div className="vendor-picture" style={{ backgroundImage: "url(/images/profile.jpg)" }}>
