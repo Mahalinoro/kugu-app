@@ -8,6 +8,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import Spinner from "./components/spinner";
+import { useAuth0 } from '@auth0/auth0-react';
 
 // chunck application
 const ItemDetails = lazy(() => import('./pages/item-details'));
@@ -20,6 +21,7 @@ const Checkout = lazy(() => import('./pages/checkout'));
 
 const App = () => {
   const [items, setItems] = useState([]);
+  const { user, isAuthenticated } = useAuth0();  
   const query = new URLSearchParams(useLocation().search);
   const id = query.get("id");
 
@@ -44,7 +46,7 @@ const App = () => {
             <Routes>
                 <Route exact path="/" element={<Home items={items}/>}></Route>
                 <Route exact path="/item-details" element={<ItemDetails id={id}/>}></Route>
-                <Route exact path="/sell" element={<Sell />}></Route>
+                <Route exact path="/sell" element={<Sell user={user} isAuthenticated={isAuthenticated}/>}></Route>
                 <Route exact path="/cart" element={<Cart />}></Route>
                 <Route exact path="/cart/checkout" element={<Checkout />} />
                 <Route exact path="/user/profil" element={<ProfilePage />} />

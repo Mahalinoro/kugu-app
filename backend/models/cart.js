@@ -3,21 +3,23 @@ const Schema = mongoose.Schema;
 
 const CartSchema = new Schema({
     userId: {
+        required: true,
         type: String,
     },
-    items: [{
-        productId: {
-            type: String,
-        },
-        name: String,
-        quantity: {
-            type: Number,
-            required: true,
-            min: [1, 'Quantity can not be less then 1.'],
-            default: 1
-        },
-        price: Number
-    }],
+    items:
+        [{
+            productId: {
+                type: String,
+            },
+            name: String,
+            quantity: {
+                type: Number,
+                required: true,
+                min: [1, 'Quantity can not be less then 1.'],
+                default: 1
+            },
+            price: Number
+        }],
     bill: {
         type: Number,
         required: true,
