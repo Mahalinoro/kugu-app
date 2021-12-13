@@ -11,7 +11,7 @@ const Cart = () => {
         isEmpty: true
     })
 
-    const { user, isAuthenticated } = useAuth0();
+    const { isAuthenticated } = useAuth0();
 
     React.useEffect(() => {
         setstate({...state, isEmpty: false});

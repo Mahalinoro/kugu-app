@@ -28,8 +28,8 @@ require('dotenv').config();
 connectDB();
 
 // add middleware
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 const corsOptions = {
     origin: '*',
     credentials: true,            //access-control-allow-credentials:true
