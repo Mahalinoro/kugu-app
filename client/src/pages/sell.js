@@ -71,7 +71,7 @@ export default class Sell extends React.Component {
             )
         }
 
-        if(this.props.isAuthenticated === false)
+        if(this.props.isAuthenticated)
         return (
             <div className="text-color sell">
                 <div className="sell-hero">
