@@ -9,7 +9,7 @@ const Cart = () => {
     const navigation = useNavigate();
     const [state, setstate] = React.useState({
         isEmpty: true
-    })  
+    })
 
     const [cartItems, setCartItems] = useState([]);
     const { user, isAuthenticated } = useAuth0();
@@ -18,7 +18,7 @@ const Cart = () => {
         setstate({ ...state, isEmpty: false });
         const getCartItems = async () => {
             try {
-                const data  = await axios.get('/cart/' + user.identities.user_id);
+                const data = await axios.get('/cart/' + user.identities.user_id);
                 setCartItems(data);
             } catch (err) {
                 console.error(err);
@@ -98,8 +98,9 @@ const Cart = () => {
     }
     else {
         content = (
-            <div>
-                <p>You need to login to view cart</p>
+            <div className="cart-empty">
+                <p className="text-medium-20">Oops! You need to log in first to view the cart :(</p>
+                <NavLink className="text-medium-16 btn-cart" to="/">Return to Home</NavLink>
             </div>
         )
     }
@@ -107,5 +108,10 @@ const Cart = () => {
         content
     )
 }
+
+return (
+    content
+)
+
 
 export default Cart;

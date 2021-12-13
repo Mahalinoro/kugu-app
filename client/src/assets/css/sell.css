@@ -117,3 +117,18 @@
     margin-bottom: 16px;
 }
 
+.sell-validation .error{
+    color: #D8000C;
+	background-color: #FFBABA;
+    padding: 8px;
+    border: 1px solid #d8000b00;
+    border-radius: 4px;
+}
+
+.sell-validation .success{
+    color: #4F8A10;
+	background-color: #DFF2BF;
+    padding: 8px;
+    border: 1px solid #DFF2BF;
+    border-radius: 4px;
+}
