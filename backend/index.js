@@ -1,7 +1,7 @@
 // imports 
 const express = require('express');
 const app = express();
-const apiPort = 5000;
+const apiPort = 8080;
 const path = require('path');
 const fs = require('fs');
 const bodyParser = require('body-parser');
@@ -156,4 +156,5 @@ app.post('/image', (req, res) => {
 })
 
 // serve app
-app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`));
+var port_number = server.listen(process.env.PORT || 8080);
+app.listen(port_number);
