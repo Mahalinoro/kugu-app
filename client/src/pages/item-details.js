@@ -6,7 +6,7 @@ import axios from 'axios';
 export default class ItemDetails extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { isModalOpen: false, item: [], image: {} };
+        this.state = { isModalOpen: false, item: [] };
     }
 
     componentDidMount(){
@@ -28,7 +28,6 @@ export default class ItemDetails extends React.Component {
     }
 
     render() {
-        console.log(this.state.image.image)
         let modal;
         if (this.state.isModalOpen) {
             modal = (
