@@ -13,7 +13,8 @@ const OrderSchema = new Schema({
         quantity: {
             type: Number,
             required: true,
-            min: [1, 'Quantity can not be less then 1.']
+            min: [1, 'Quantity can not be less then 1.'], 
+            default: 1
         },
         price: Number
     }],
@@ -24,10 +25,7 @@ const OrderSchema = new Schema({
     date_added: {
         type: Date,
         default: Date.now
-    }, 
-    status: {
-        type: String
-    }
+    },
    
 })
 

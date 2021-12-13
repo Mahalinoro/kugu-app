@@ -49,7 +49,7 @@ app.get('/user', (req, res) => {
         .then(user => {
             if (!user) {
                 res.status(404).send();
-            }
+            } state.sellerID
             res.send(user);
         }).catch((e) => {
             res.status(400).send(e);
@@ -99,16 +99,18 @@ app.post('/item', (req, res) => {
     });
 });
 
-app.post('/orders', (req, res) => {
-    Cart.find({})
-        .then(items => {
-            if (!items) {
-                res.status(404).send();
-            }
-            res.send(items);
-        }).catch((e) => {
-            res.status(400).send(e);
-        });
+app.post('/order', (req, res) => {
+    const newOrder = new Order(
+        {
+            _id: new mongoose.Types.ObjectId(),
+            userID: req.body.name,
+            items: req.body.category,
+            bill: req.body.price,
+        }
+    );
+    newOrder.save().then(item => res.json(item)).catch((e) => {
+        res.status(400).send(e);
+    });
 });
 
 
@@ -125,10 +127,10 @@ app.get('/orders/:userID', (req, res) => {
 });
 
 app.get('/cart/:userID', (req, res) => {
-    Order.find({ 'sellerID': req.params.userID })
+    Cart.find({ 'userID': req.params.userID })
         .then(cart => {
             if (!cart) {
-                res.status(404).send();
+                res.status(400);
             }
             res.send(cart);
         }).catch((e) => {
@@ -137,8 +139,41 @@ app.get('/cart/:userID', (req, res) => {
 });
 
 
-app.get('/search/:param', (req, res) => {
+app.post('/cart/:userID', (req, res) => {
+    Cart.find({ 'userID': req.params.userID })
+        .then(cart => {
+            if (!cart) {
+                const newCart = new Cart({
+                    userId: req.body.userID,
+                    items: [req.body.item],
+                    bill: req.body.bill
+                })
+                newCart.save().then(item => res.json(item)).catch((e) => {
+                    res.status(400).send(e);
+                });
 
+
+            }
+            const updateCart = new Cart({
+                userId: req.body.userID,
+                items: cart.items.push(req.body.item),
+                bill: (cart.bill + req.body.bill)
+            })
+            updateCart.save().then(item => res.json(item)).catch((e) => {
+                res.status(400).send(e);
+            });
+            res.send(cart);
+        }).catch((e) => {
+            res.status(400).send(e);
+        });
+});
+
+app.get('/search/:param', (req, res) => {
+    Product.find(
+        {
+            'name': /req.params.param/
+        }
+    ).then(data => res.send(data));
 })
 
 
