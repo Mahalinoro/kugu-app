@@ -10,7 +10,7 @@ export default class ItemDetails extends React.Component {
     }
 
     componentDidMount(){
-        axios.get(`/item/${this.props.id}`)
+        axios.get(`https://kugu-backend.herokuapp.com/item/${this.props.id}`)
         .then(res => {
             this.setState({item: res.data, image: res.data.img});
         })

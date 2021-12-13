@@ -37,7 +37,7 @@ export default class Sell extends React.Component {
 
     saveProduct = async (e) => {
         e.preventDefault();
-        await axios.post('/item', {
+        await axios.post('https://kugu-backend.herokuapp.com/item', {
             name: this.state.title,
             price: this.state.price,
             category: this.state.category,
