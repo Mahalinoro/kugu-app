@@ -1,3 +1,4 @@
+import { useAuth0 } from '@auth0/auth0-react';
 import React from 'react';
 // import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
@@ -10,13 +11,15 @@ const Cart = () => {
         isEmpty: true
     })
 
+    const { user, isAuthenticated } = useAuth0();
+
     React.useEffect(() => {
         setstate({...state, isEmpty: false});
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     let content;
-    if(state.isEmpty){
+    if(state.isEmpty && isAuthenticated){
             content = (
                 <div className="cart-empty">
                     <img alt="open-box" src="/images/open-box.png"></img>
@@ -25,7 +28,7 @@ const Cart = () => {
                     <button className="text-medium-16 btn-cart">Your cart is empty!</button>
                 </div>
             );
-        }else{
+        }else if (!state.isEmpty && isAuthenticated){
             content = (
                 <div className='cart-bg'>
                 <div className="text-color cart">
@@ -107,7 +110,13 @@ const Cart = () => {
 
             )
         }
-
+        else{
+            content = (
+                <div>
+                    <p>You need to login to view cart</p>
+                </div>
+            )
+        }
         return (
             content
         )
