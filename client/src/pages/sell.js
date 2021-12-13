@@ -15,7 +15,7 @@ export default class Sell extends React.Component {
             title: '',
             price: 0,
             category: '',
-            img: [],
+            img: '',
             description: '',
             condition: '',
             
