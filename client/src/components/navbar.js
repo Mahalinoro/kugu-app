@@ -3,7 +3,7 @@ import React from "react";
 // We import bootstrap to make our application look better.
 // import "bootstrap/dist/css/bootstrap.css";
 import '../assets/css/nav.css';
-
+import LoginButton  from './loginButton';
 // We import NavLink to utilize the react router.
 import { NavLink } from "react-router-dom";
 
@@ -28,7 +28,7 @@ class Navbar extends React.Component{
                             </i>
                         </button>
                         <div class="dropdown-content">
-                            <NavLink to="/user/profil" className="text-regular-16 text-color">My Profile</NavLink>
+                            <NavLink to="/user/profile" className="text-regular-16 text-color">My Profile</NavLink>
                             <NavLink to="/" className="text-regular-16 text-color">Settings</NavLink>
                             <NavLink to="/" className="text-regular-16 text-color">Logout</NavLink>
                         </div>
@@ -38,7 +38,7 @@ class Navbar extends React.Component{
         }else{
             content = (
             <div className="nav-icon text-regular-16">
-                <NavLink to="/" className="nav-button primary-color">Sign Up | Login</NavLink>
+                <LoginButton></LoginButton>
             </div> 
             );
         }
