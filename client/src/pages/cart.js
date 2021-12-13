@@ -1,6 +1,6 @@
 import { useAuth0 } from '@auth0/auth0-react';
-import React, { useState, setState } from 'react';
-// import { NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import '../assets/css/cart.css';
 import axios from 'axios';
@@ -109,9 +109,9 @@ const Cart = () => {
     )
 }
 
-return (
-    content
-)
+// return (
+//     content
+// )
 
 
 export default Cart;

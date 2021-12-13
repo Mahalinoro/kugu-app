@@ -1,8 +1,8 @@
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import '../assets/css/item.css';
 import axios from 'axios';
-import { useAuth0 } from '@auth0/auth0-react';
+// import { useAuth0 } from '@auth0/auth0-react';
 
 export default class ItemDetails extends React.Component {
 
