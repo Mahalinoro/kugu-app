@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import './assets/css/globals.css';
 import { BrowserRouter } from "react-router-dom";
-import env from "react-dotenv";
 import { Auth0Provider } from '@auth0/auth0-react';
 require('dotenv').config();
 
@@ -13,7 +12,7 @@ const clientID = process.env.REACT_APP_CLIENT_ID;
 ReactDOM.render(
   <Auth0Provider
   domain={domain}
-  clientID={clientID}
+  clientId={clientID}
   redirectUri={window.location.origin}>
   <React.StrictMode>
     <BrowserRouter>

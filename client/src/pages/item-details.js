@@ -12,7 +12,8 @@ export default class ItemDetails extends React.Component {
     componentDidMount(){
         axios.get(`/item/${this.props.id}`)
         .then(res => {
-            this.setState({item: res.data})
+            console.log(res);
+            this.setState({item: res.data});
         })
         .catch(function(error){
             console.log(error);
@@ -55,7 +56,7 @@ export default class ItemDetails extends React.Component {
         return (
             <div className="item-container">
                 <div className="item-details">
-                    <div className="item-photo" style={{ backgroundImage: `url("data:image/png;base64,`+ this.state.item + `")` }}>
+                    <div className="item-photo" style={{ backgroundImage: `url("data:image/png;base64,`+ this.state.item.img + `")` }}>
                         {/* <img className="it-pic" alt="cup" src={cup}></img> */}
                     </div>
 
