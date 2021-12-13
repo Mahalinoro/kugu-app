@@ -28,7 +28,7 @@ const App = () => {
   useEffect(() => {
       const getItems = async () => {
       try {
-        const {data} = await axios.get('/items')
+        const {data} = await axios.get('https://kugu-backend.herokuapp.com/items')
         setItems(data);
       } catch (err) {
         console.error(err);

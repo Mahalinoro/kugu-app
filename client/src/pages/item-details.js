@@ -6,11 +6,11 @@ import axios from 'axios';
 export default class ItemDetails extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { isModalOpen: false, item: [], image: {} };
+        this.state = { isModalOpen: false, item: [] };
     }
 
     componentDidMount(){
-        axios.get(`/item/${this.props.id}`)
+        axios.get(`https://kugu-backend.herokuapp.com/item/${this.props.id}`)
         .then(res => {
             this.setState({item: res.data, image: res.data.img});
         })
@@ -28,7 +28,6 @@ export default class ItemDetails extends React.Component {
     }
 
     render() {
-        console.log(this.state.image.image)
         let modal;
         if (this.state.isModalOpen) {
             modal = (
