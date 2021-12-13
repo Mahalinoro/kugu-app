@@ -6,14 +6,13 @@ import axios from 'axios';
 export default class ItemDetails extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { isModalOpen: false, item: [] };
+        this.state = { isModalOpen: false, item: [], image: {} };
     }
 
     componentDidMount(){
         axios.get(`/item/${this.props.id}`)
         .then(res => {
-            console.log(res);
-            this.setState({item: res.data});
+            this.setState({item: res.data, image: res.data.img});
         })
         .catch(function(error){
             console.log(error);
@@ -29,6 +28,7 @@ export default class ItemDetails extends React.Component {
     }
 
     render() {
+        console.log(this.state.image.image)
         let modal;
         if (this.state.isModalOpen) {
             modal = (
@@ -56,9 +56,9 @@ export default class ItemDetails extends React.Component {
         return (
             <div className="item-container">
                 <div className="item-details">
-                    <div className="item-photo" style={{ backgroundImage: `url("data:image/png;base64,`+ this.state.item.img + `")` }}>
-                        {/* <img className="it-pic" alt="cup" src={cup}></img> */}
+                    <div className="item-photo" style={{ backgroundImage: `url("`+ this.state.item.img + `")`}}>
                     </div>
+                    
 
                     <div className="item-description text-color">
                         <p className="heading-28">Item Details | <span className="text-light-28">{this.state.item.category}</span></p>
