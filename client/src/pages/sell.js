@@ -6,6 +6,7 @@ import axios from 'axios';
 export default class Sell extends React.Component {
 
     constructor(props) {
+        
         super(props);
         this.state = {
             err: '',
@@ -15,16 +16,9 @@ export default class Sell extends React.Component {
             category: '',
             img: [],
             description: '',
-            sellerID: '55mdfkljkerjo3r2',
             condition: '',
-        }
-
-        
-    }
-
-    getSeller = async () => {
-
-    }
+            
+    } }
 
     photoUpload = async(e) => {
         e.preventDefault();
@@ -50,14 +44,14 @@ export default class Sell extends React.Component {
             img: this.state.img,
             description: this.state.description,
             condition: this.state.condition,
-            sellerID: this.state.sellerID,
+            sellerID: this.props.name,
         }).then(() => this.setState({msg: 'Uploaded successfully'}))
         
 
     }
 
     render() {
-
+        if(this.props.isAuthenticated)
         return (
             <div className="text-color sell">
                 <div className="sell-hero">
@@ -131,5 +125,10 @@ export default class Sell extends React.Component {
                         </div>
             </div>
         )
+        else {
+            return (
+                <div>You need to log in</div>
+            )
+        }
     }
 }
