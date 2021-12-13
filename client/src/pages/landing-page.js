@@ -5,6 +5,7 @@ import '../assets/css/item.css';
 
 
 export default class Home extends React.Component{
+
     render() {
         return (
             <div className="text-color home">
@@ -64,7 +65,9 @@ export default class Home extends React.Component{
                             {this.props.items.map(item => (
                             <div className="item-card">
                                 <NavLink to={'/item-details/?id='+item._id}>
-                                    <div className="item-pic" style={{ backgroundImage: `url(`+ item.img + `)`}}></div>
+                                    
+                                    {/* <div className="item-pic" style={{ backgroundImage: `url("data:image/png;base64,`+ item.img + `")`}}></div> */}
+                                    <div className="item-pic" style={{ backgroundImage: `url("https://shacknews-ugc.s3.us-east-2.amazonaws.com/user/9647/article-inline/2021-03/template.jpg?versionId=EPuOpjX7pGmrwxIxaF8BBrMfaK4X7f.S")`}}></div>
                                 </NavLink>
                                 
 
