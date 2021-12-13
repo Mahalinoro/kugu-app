@@ -156,5 +156,7 @@ app.post('/image', (req, res) => {
 })
 
 // serve app
-var port_number = server.listen(process.env.PORT || 8080);
-app.listen(port_number);
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
+});
