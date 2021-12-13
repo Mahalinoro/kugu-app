@@ -1,6 +1,7 @@
 import React from 'react';
 // import { NavLink } from 'react-router-dom';
 import '../assets/css/sell.css';
+import '../assets/css/cart.css';
 import axios from 'axios';
 
 export default class Sell extends React.Component {
@@ -127,7 +128,10 @@ export default class Sell extends React.Component {
         )
         else {
             return (
-                <div>You need to log in</div>
+                 <div className="cart-empty">
+                    <p className="text-medium-20">Oops! You need to log in first :(</p>
+                    <button className="text-medium-16 btn-cart">Return to Home</button>
+                </div>
             )
         }
     }
