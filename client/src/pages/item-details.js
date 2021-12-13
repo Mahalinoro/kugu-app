@@ -1,22 +1,30 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import '../assets/css/item.css';
 import axios from 'axios';
+import { useAuth0 } from '@auth0/auth0-react';
 
 export default class ItemDetails extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = { isModalOpen: false, item: [] };
+        //    console.log(this.props.location.user.identities.user_id);
+
     }
 
-    componentDidMount(){
+
+
+    componentDidMount() {
         axios.get(`https://kugu-backend.herokuapp.com/item/${this.props.id}`)
-        .then(res => {
-            this.setState({item: res.data, image: res.data.img});
-        })
-        .catch(function(error){
-            console.log(error);
-        })
+            .then(res => {
+                this.setState({ item: res.data, image: res.data.img });
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+
+
     }
 
     handleClickModalOpen() {
@@ -25,6 +33,21 @@ export default class ItemDetails extends React.Component {
 
     handleClickModalClose() {
         this.setState({ isModalOpen: false });
+    }
+
+    addToCart() {
+        console.log('clicked add to cart');
+        // const { authenticated, user } = useAuth0();
+
+        
+            axios.post('/cart/kmafknekfl', {
+                userID: 'user.identities.user_id',
+                item: this.state.item,
+                bill: this.state.price,
+            }).then(() => this.handleClickModalOpen())
+                .catch(err => console.log(err))
+        
+
     }
 
     render() {
@@ -51,13 +74,13 @@ export default class ItemDetails extends React.Component {
             )
         }
 
-    
+
         return (
             <div className="item-container">
                 <div className="item-details">
-                    <div className="item-photo" style={{ backgroundImage: `url("`+ this.state.item.img + `")`}}>
+                    <div className="item-photo" style={{ backgroundImage: `url("` + this.state.item.img + `")` }}>
                     </div>
-                    
+
 
                     <div className="item-description text-color">
                         <p className="heading-28">Item Details | <span className="text-light-28">{this.state.item.category}</span></p>
@@ -80,7 +103,7 @@ export default class ItemDetails extends React.Component {
                         </div>
 
                         <div className="divider"></div>
-                        <button className="btn-item btn-cart text-medium-16" onClick={() => { this.handleClickModalOpen() }}>Add to Cart</button>
+                        <button className="btn-item btn-cart text-medium-16" onClick={() => this.addToCart()}>Add to Cart</button>
                         <button className="btn-item btn-fav text-medium-16">Add to Favorites</button>
                     </div>
                 </div>

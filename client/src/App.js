@@ -44,7 +44,7 @@ const App = () => {
           { /* display spinner when page is loading */ }
           <Suspense fallback={<Spinner />}>
             <Routes>
-                <Route exact path="/" element={<Home items={items}/>}></Route>
+                <Route exact path="/" element={<Home items={items} user={user}/>}></Route>
                 <Route exact path="/item-details" element={<ItemDetails id={id}/>}></Route>
                 <Route exact path="/sell" element={<Sell user={user} isAuthenticated={isAuthenticated}/>}></Route>
                 <Route exact path="/cart" element={<Cart />}></Route>
