@@ -35,7 +35,7 @@ export default class ItemDetails extends React.Component {
 
      addToCart() {
             axios.post('/cart', {
-                userID: localStorage.getItem("user").sub,
+                userID: '61b34d70defd5a118c4f3486',
                 item: {
                     name: this.state.item.name,
                     img: this.state.item.img,

@@ -46,7 +46,7 @@ export default class Sell extends React.Component {
             img: this.state.img,
             description: this.state.description,
             condition: this.state.condition,
-            sellerID: localStorage.user.sub,
+            sellerID: "'61b34d70defd5a118c4f3486'",
         }).then(() => this.setState({msg: 'Uploaded successfully'}))
         
 

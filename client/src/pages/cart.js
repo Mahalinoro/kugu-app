@@ -17,7 +17,7 @@ const Cart = () => {
         setstate({ ...state, isEmpty: false });
         const getCartItems = async () => {
             try {
-                const data = await axios.get('/cart/' + localStorage.getItem("user").sub);
+                const data = await axios.get('/cart/61b34d70defd5a118c4f3486');
                 setCartItems(data);
             } catch (err) {
                 console.error(err);
