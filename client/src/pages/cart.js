@@ -1,5 +1,5 @@
 import { useAuth0 } from '@auth0/auth0-react';
-import React, { useState, setState } from 'react';
+import React, { useState} from 'react';
 import { useNavigate, NavLink } from 'react-router-dom';
 import '../assets/css/cart.css';
 import axios from 'axios';
@@ -11,7 +11,7 @@ const Cart = () => {
     })
 
     const [cartItems, setCartItems] = useState([]);
-    const { user, isAuthenticated } = useAuth0();
+    const {isAuthenticated } = useAuth0();
 
     React.useEffect(() => {
         setstate({ ...state, isEmpty: false });
