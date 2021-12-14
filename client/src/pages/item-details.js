@@ -34,7 +34,7 @@ export default class ItemDetails extends React.Component {
     }
 
      addToCart() {
-            axios.post('/cart', {
+            axios.post('https://kugu-backend.herokuapp.com/cart', {
                 userID: '61b34d70defd5a118c4f3486',
                 item: {
                     name: this.state.item.name,
