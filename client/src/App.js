@@ -49,7 +49,7 @@ const App = () => {
                 <Route exact path="/sell" element={<Sell user={user} isAuthenticated={isAuthenticated}/>}></Route>
                 <Route exact path="/cart" element={<Cart />}></Route>
                 <Route exact path="/cart/checkout" element={<Checkout />} />
-                <Route exact path="/user/profil" element={<ProfilePage />} />
+                <Route exact path="/user/profile" element={<ProfilePage />} />
               </Routes>
             </Suspense>
         <Footer />
