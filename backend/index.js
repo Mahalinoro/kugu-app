@@ -109,7 +109,7 @@ app.post('/order', (req, res) => {
         }
     );
     newOrder.save().then(item => res.json(item)).catch((e) => {
-        res.status(400).send(e);
+        res.send(e);
     });
 });
 

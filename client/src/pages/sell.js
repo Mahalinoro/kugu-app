@@ -17,6 +17,7 @@ export default class Sell extends React.Component {
             img: '',
             description: '',
             condition: '',
+            sellerID: '61b34d70defd5a118c4f3486'
             
     } }
 
@@ -35,6 +36,7 @@ export default class Sell extends React.Component {
  
     }
 
+    
     saveProduct = async (e) => {
         e.preventDefault();
         await axios.post('https://kugu-backend.herokuapp.com/item', {
