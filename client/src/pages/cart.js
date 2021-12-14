@@ -28,7 +28,7 @@ const Cart = () => {
     }, [cartItems])
 
     let content;
-    if (cartItems && isAuthenticated) {
+    if (cartItems.isEmpty && isAuthenticated) {
         content = (
             <div className="cart-empty">
                 <img alt="open-box" src="/images/open-box.png"></img>
