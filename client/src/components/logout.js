@@ -3,8 +3,11 @@ import { useAuth0 } from "@auth0/auth0-react";
 import '../assets/css/nav.css';
 
 const LogoutButton = () => {
+  localStorage.removeItem("access_token")
+  localStorage.removeItem("id_token")
+  localStorage.removeItem("expires_at")
   const { logout } = useAuth0();
-  
+
   return (
     <button className="text-color" onClick={() => logout({ returnTo: window.location.origin })}>
       Log Out

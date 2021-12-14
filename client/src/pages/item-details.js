@@ -5,12 +5,10 @@ import axios from 'axios';
 import { useAuth0 } from '@auth0/auth0-react';
 
 export default class ItemDetails extends React.Component {
-
+    
     constructor(props) {
         super(props);
-        this.state = { isModalOpen: false, item: [] };
-        //    console.log(this.props.location.user.identities.user_id);
-
+        this.state = { isModalOpen: false, item: {} };
     }
 
 
@@ -35,15 +33,15 @@ export default class ItemDetails extends React.Component {
         this.setState({ isModalOpen: false });
     }
 
-    addToCart() {
-        console.log('clicked add to cart');
-        // const { authenticated, user } = useAuth0();
-
-        
-            axios.post('/cart/kmafknekfl', {
-                userID: 'user.identities.user_id',
-                item: this.state.item,
-                bill: this.state.price,
+     addToCart() {
+            axios.post('/cart', {
+                userID: localStorage.getItem("user").sub,
+                item: {
+                    name: this.state.item.name,
+                    img: this.state.item.img,
+                    price: this.state.item.price,
+                },
+                bill: this.state.item.price,
             }).then(() => this.handleClickModalOpen())
                 .catch(err => console.log(err))
         

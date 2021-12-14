@@ -1,7 +1,6 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import React, { useState, setState } from 'react';
-// import { NavLink } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import '../assets/css/cart.css';
 import axios from 'axios';
 
@@ -18,7 +17,7 @@ const Cart = () => {
         setstate({ ...state, isEmpty: false });
         const getCartItems = async () => {
             try {
-                const data = await axios.get('/cart/' + user.identities.user_id);
+                const data = await axios.get('/cart/' + localStorage.getItem("user").sub);
                 setCartItems(data);
             } catch (err) {
                 console.error(err);
@@ -29,7 +28,7 @@ const Cart = () => {
     }, [cartItems])
 
     let content;
-    if (cartItems.isEmpty && isAuthenticated) {
+    if (cartItems && isAuthenticated) {
         content = (
             <div className="cart-empty">
                 <img alt="open-box" src="/images/open-box.png"></img>
@@ -38,7 +37,7 @@ const Cart = () => {
                 <button className="text-medium-16 btn-cart">Your cart is empty!</button>
             </div>
         );
-    } else if (!cartItems.isEmpty && isAuthenticated) {
+    } else if (!cartItems && isAuthenticated) {
         content = (
             <div className='cart-bg'>
                 <div className="text-color cart">
@@ -108,10 +107,6 @@ const Cart = () => {
         content
     )
 }
-
-return (
-    content
-)
 
 
 export default Cart;

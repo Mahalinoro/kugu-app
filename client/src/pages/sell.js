@@ -7,7 +7,6 @@ import axios from 'axios';
 export default class Sell extends React.Component {
 
     constructor(props) {
-        
         super(props);
         this.state = {
             err: '',
@@ -45,7 +44,7 @@ export default class Sell extends React.Component {
             img: this.state.img,
             description: this.state.description,
             condition: this.state.condition,
-            sellerID: this.props.name,
+            sellerID: localStorage.user.sub,
         }).then(() => this.setState({msg: 'Uploaded successfully'}))
         
 

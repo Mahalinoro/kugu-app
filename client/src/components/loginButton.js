@@ -3,11 +3,12 @@ const React = require("react");
 
 
 function LoginButton() {
-  const {
+  const {user, 
     isAuthenticated,
     loginWithRedirect,
   } = useAuth0();
 
+  localStorage.setItem("user", user);
   return !isAuthenticated && (
     <button onClick={loginWithRedirect} className="nav-button primary-color">Log in</button>
   );

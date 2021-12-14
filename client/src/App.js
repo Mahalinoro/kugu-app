@@ -21,7 +21,7 @@ const Checkout = lazy(() => import('./pages/checkout'));
 
 const App = () => {
   const [items, setItems] = useState([]);
-  const { user, isAuthenticated } = useAuth0();  
+  const { user, isAuthenticated } = useAuth0();
   const query = new URLSearchParams(useLocation().search);
   const id = query.get("id");
 
